@@ -2,27 +2,27 @@ package com.coderscampus.assignment14.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import com.coderscampus.assignment14.domain.Channel;
 
-@Repository
+@Component
 public class ChannelRepository {
 
 	private List<Channel> channels = new ArrayList<>();
 	
 
 	public List<Channel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return channels;
 	}
 
 	
 
-	public Channel findByCId(Long CId) {
-		Channel channel = new Channel();
-		return channel;
+	public Channel findByChannelId(Long channelId) {
+		Optional<Channel> foundChannel = channels.stream().filter(channel -> channel.getChannelId().equals(channelId)).findAny();
+		return foundChannel.orElse(new Channel());
 	}
 
 
@@ -31,8 +31,15 @@ public class ChannelRepository {
 		Channel channel = new Channel();
 		channel.setName(channelName);
 		channels.add(channel);
-		channel.setCId((long) channels.size());
+		channel.setChannelId((long) channels.size());
 		return channel;
+	}
+	
+	public ChannelRepository() {
+		Channel generalChannel = new Channel();
+		generalChannel.setName("General");
+		generalChannel.setChannelId((long) 1);
+		channels.add(generalChannel);
 	}
 
 

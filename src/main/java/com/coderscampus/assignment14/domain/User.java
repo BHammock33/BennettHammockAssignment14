@@ -7,16 +7,16 @@ import java.util.List;
 
 public class User {
 	
-	private Long UId;
+	private Long id;
 	private String Name;
 	private List<Message> messages = new ArrayList<>();
 	private List<Channel> channels = new ArrayList<>();
 	
-	public Long getUId() {
-		return UId;
+	public Long getId() {
+		return id;
 	}
-	public void setId(Long UId) {
-		this.UId = UId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return Name;
@@ -38,7 +38,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [UId=" + UId + ", Name=" + Name + ", messages=" + messages + ", channels=" + channels + "]";
+		return "User [id=" + id + ", Name=" + Name + ", messages=" + messages + ", channels=" + channels + "]";
 	}
 	
 	

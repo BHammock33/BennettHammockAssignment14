@@ -1,15 +1,16 @@
 package com.coderscampus.assignment14.domain;
 
+
 public class Channel {
 	
-	private Long CId;
+	private Long channelId;
 	private String name;
 	
-	public Long getCId() {
-		return CId;
+	public Long getChannelId() {
+		return channelId;
 	}
-	public void setCId(Long CId) {
-		this.CId = CId;
+	public void setChannelId(Long channelId) {
+		this.channelId = channelId;
 	}
 	public String getName() {
 		return name;
@@ -19,7 +20,7 @@ public class Channel {
 	}
 	@Override
 	public String toString() {
-		return "Channel [CId=" + CId + ", name=" + name + "]";
+		return "Channel [CId=" + channelId + ", name=" + name + "]";
 	}
 	
 	

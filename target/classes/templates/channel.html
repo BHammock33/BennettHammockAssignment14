@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th = "http://thymeleaf.org">
 	<head>
-	<title>Channel</title>
+	<title th:text = "${channel.name}"></title>
 	</head>
 	<body>
-	
-	
+		<div id = "messages">
+		</div>
+		<div class = "userMessages">
+			<textarea rows = "3" cols= "50" id ="messageSpace" th:attr = "data-id=${channel.channelId}"></textarea>
+			<script type="text/javascript" src="/js/channel.js"></script>
+		</div>
+	<a href="/welcome">Back</a>
 	</body>
 	</html>

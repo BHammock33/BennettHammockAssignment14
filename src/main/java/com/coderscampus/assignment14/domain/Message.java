@@ -4,7 +4,7 @@ public class Message {
 	
 	private String text;
 	private User user;
-	private Long MId;
+	private Long channelId;
 	
 	public String getText() {
 		return text;
@@ -18,15 +18,15 @@ public class Message {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Long getMId() {
-		return MId;
+	public long getChannelId() {
+		return channelId;
 	}
-	public void setMId(Long MId) {
-		this.MId = MId;
+	public void setChannelId(Long channelId) {
+		this.channelId = channelId;
 	}
 	@Override
 	public String toString() {
-		return "Message [text=" + text + ", user=" + user + ", MId=" + MId + "]";
+		return "Message [text=" + text + ", user=" + user + ", channelId=" + channelId + "]";
 	}
 	
 	

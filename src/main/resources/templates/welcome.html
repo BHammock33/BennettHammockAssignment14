@@ -2,18 +2,18 @@
 <html xmlns:th = "http://thymeleaf.org">
 <head>
 	<title>Welcome</title>
+	<script type="text/javascript" src = "/js/welcome.js"></script>
 </head>
 <body>
-	<h2>Login Below</h2>
-	<form action = "" method = "post">
-	<div>
-		<label>Name</label>
-		<input type="text" th:field="${user.username}">
+	<h2>Go to channel</h2>
+	<div th:each="channel : ${channels}">
+		<a th:href="@{/channels/{channelId} (channelId = ${channel.channelId})}" th:text = "${channel.name}"></a>
 	</div>
-	<div>
-		<button type= "button" id="submitBtn">Submit</button>
-	</div>
+	<h3>Create Channel</h3>
+	<form action = "/create-channel" method = "post">
+		<label for ="channel-name">Channel Name:</label>
+		<input type = "text" id="channel-name" name="channelName">
+		<input type = "submit" value="Submit">
 	</form>
-	<script type="text/javascript" src="/js/welcome.js"></script>
 </body>
 </html>
